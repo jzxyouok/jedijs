@@ -24,9 +24,9 @@ coverage
 build/Release
 
 # Dependency directory
-server/node_modules
-web-angular/node_modules
-web-react/node_modules
+jedi-server/node_modules
+jedi-web/angular/node_modules
+jedi-web/react/node_modules
 
 
 # Optional npm cache directory
@@ -36,5 +36,5 @@ web-react/node_modules
 .node_repl_history
 
 # .env.js
-server/.env.js
+jedi-server/.env.js
 

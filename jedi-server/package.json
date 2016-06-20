@@ -16,8 +16,10 @@
     "log4js": "^0.6.36",
     "moment": "^2.13.0",
     "mongoose": "^4.5.0",
+    "mysql": "^2.11.1",
     "redis": "^2.6.1",
     "request-promise": "^3.0.0",
+    "sequelize": "^3.23.3",
     "url": "^0.11.0"
   }
 }

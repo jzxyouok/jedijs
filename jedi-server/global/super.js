@@ -15,7 +15,7 @@
 // co可全局访问
 global.co = require('co');
 
-global.jedi = (func, ..args) => {
+global.jedi = (func, ...args) => {
 	if (_.isPromise(func)) {
 		return func;
 	} else if (_.isGeneratorFunction(func)) {

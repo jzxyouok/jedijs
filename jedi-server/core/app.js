@@ -37,8 +37,9 @@ class App {
         this[app]  = express();
         this[inited] = false;
         this.logger = null;
-        this.db = null;
         this.cache = null;
+        this.mysql = null;
+        this.mongo = null;
     }
 
     /**
@@ -67,8 +68,15 @@ class App {
         if (!dbConfig.driver) {
             return false;
         }
-        const driverConfig = dbConfig['connections'][dbConfig.driver];
-        this.db = DB.getInstance(dbConfig.driver, driverConfig);
+        let drivers = dbConfig.driver;
+        if (!_.isArray(drivers)) {
+            drivers = [drivers];
+        }
+
+        _.forEach(drivers, (driver) => {
+            const driverConfig = dbConfig['connections'][driver];
+            this[driver] = DB.getInstance(driver, driverConfig);
+        });
     }
 
     /**

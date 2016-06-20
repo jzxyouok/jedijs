@@ -8,12 +8,12 @@ const mongoose = require('mongoose');
 
 class Mongo {
     static init(mongoConfig) {
-        const dsn = 'mongodb://' + mongoConfig.host + ':' + mongoConfig.port + '/' + mongoConfig.db;
+        const dsn = 'mongodb://' + mongoConfig.host + ':' + mongoConfig.port + '/' + mongoConfig.database;
         let options = {
             server: mongoConfig.server
         };
 
-        if (mongoConfig.user && mongoConfig.password) {
+        if (mongoConfig.username && mongoConfig.password) {
             options.user = mongoConfig.user;
             options.pass = mongoConfig.password;
         }
